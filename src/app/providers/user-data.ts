@@ -8,7 +8,6 @@ import { Storage } from '@ionic/storage';
 export class UserData {
   favorites: string[] = [];
   HAS_LOGGED_IN = 'hasLoggedIn';
-  HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
 
   constructor(
     public storage: Storage
@@ -27,6 +26,10 @@ export class UserData {
     if (index > -1) {
       this.favorites.splice(index, 1);
     }
+  }
+
+  hasLoggedIn(): Promise<boolean> {
+    return this.storage.get(this.HAS_LOGGED_IN);
   }
 
   login(username: string): Promise<any> {
@@ -64,12 +67,6 @@ export class UserData {
   isLoggedIn(): Promise<boolean> {
     return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
       return value === true;
-    });
-  }
-
-  checkHasSeenTutorial(): Promise<string> {
-    return this.storage.get(this.HAS_SEEN_TUTORIAL).then((value) => {
-      return value;
     });
   }
 }
