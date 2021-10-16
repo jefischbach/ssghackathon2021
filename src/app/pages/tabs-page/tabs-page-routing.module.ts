@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { HomePage } from '../home/home';
-
+import { HomeMairiePage } from '../home-mairie/home-mairie.page';
+ 
 
 const routes: Routes = [
   {
@@ -81,6 +82,26 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('../filesafe/filesafe.module').then(m => m.FilesafeModule)
+          }
+        ]
+      },
+      {
+
+        path: 'account',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../account/account.module').then(m => m.AccountModule)
+          }
+        ]
+
+      },{
+        
+        path: 'home-mairie',
+        children: [
+          {
+            path: '',
+            component: HomeMairiePage,
           }
         ]
       },

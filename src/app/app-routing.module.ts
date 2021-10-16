@@ -36,7 +36,11 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+  },  {
+    path: 'home-mairie',
+    loadChildren: () => import('./pages/home-mairie/home-mairie.module').then( m => m.HomeMairiePageModule)
   }
+
 ];
 
 @NgModule({

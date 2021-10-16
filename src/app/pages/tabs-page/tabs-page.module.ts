@@ -12,6 +12,11 @@ import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
 import { SpeakerListModule } from '../speaker-list/speaker-list.module';
 import { HomeModule } from '../home/home.module';
+import { AccountModule } from '../account/account.module';
+import { HomeMairiePage } from '../home-mairie/home-mairie.page';
+import { HomeMairiePageModule } from '../home-mairie/home-mairie.module';
+
+
 
 @NgModule({
   imports: [
@@ -24,7 +29,9 @@ import { HomeModule } from '../home/home.module';
     SpeakerDetailModule,
     SpeakerListModule,
     TabsPageRoutingModule,
-    HomeModule
+    HomeModule,
+    AccountModule,
+    HomeMairiePageModule
   ],
   declarations: [
     TabsPage,
