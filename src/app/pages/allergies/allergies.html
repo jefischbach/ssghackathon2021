@@ -1,0 +1,29 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Allergies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Allergies</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list-header id="header">Veuillez sélectionner les aliments auxquels vous êtes allergiques.</ion-list-header>
+
+  <ion-list #allergiesList>
+    <ion-chip color="primary" *ngFor="let allergy of allergies" (click)="allergy.enabled = !allergy.enabled; allergiesChanged = true">
+      <ion-label>{{allergy.name}}</ion-label>
+      <ion-icon name="checkmark-outline" *ngIf="allergy.enabled"></ion-icon>
+    </ion-chip>
+  </ion-list>
+  <ion-button id="saveButton" expand="block" *ngIf="allergiesChanged" (click)="save()" color="success">
+    <ion-icon id="saveIcon" name="save-outline"></ion-icon>
+    Sauvegarder
+  </ion-button>
+</ion-content>

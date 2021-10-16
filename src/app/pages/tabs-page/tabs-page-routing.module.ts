@@ -58,6 +58,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'allergies',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../allergies/allergies.module').then(m => m.AllergiesModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'
