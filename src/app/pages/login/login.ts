@@ -12,7 +12,7 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
   styleUrls: ['./login.scss'],
 })
 export class LoginPage implements AfterViewInit {
-  login: UserOptions = { username: '', password: '' };
+  login: UserOptions = { username: '', password: '' } as UserOptions;
   submitted = false;
 
   constructor(
