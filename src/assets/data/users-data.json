@@ -23,6 +23,23 @@
                     "lastName":"Dupont"
                 },
                 "phoneNumber" : "0654789845"
+            },
+            {
+                "id":"123456897",
+                "username": "mairie",
+                "password": "test",
+                "email":"mairie@mail.com",
+                "role": "mairie",
+                "address": "1 rue de la victoire",
+                "nbPersons" : "2",
+                "rightsMoney": "50",
+                "distributionCenter":{
+                    "id": "1",
+                    "name": "marché des paniers",
+                    "lon":45.77347132084348, 
+                    "lat":3.0833786788565143
+                },
+                "phoneNumber" : "0654789845"
             }
         ],
 
