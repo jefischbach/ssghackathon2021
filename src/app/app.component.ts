@@ -127,6 +127,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.userData.logout().then(() => {
+      this.storage.remove("User");
       return this.router.navigateByUrl('/app/tabs/schedule');
     });
   }

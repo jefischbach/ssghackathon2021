@@ -9,15 +9,63 @@
 
 <ion-content>
   <div *ngIf="username" class="ion-padding-top ion-text-center">
-    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
-    <h2>{{username}}</h2>
+    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar" style="float: left;">
+    <h2 style="display: inline-block;">Bonjour {{user.firstName}} !</h2>
 
-    <ion-list inset>
-      <ion-item (click)="updatePicture()">Update Picture</ion-item>
-      <ion-item (click)="changeUsername()">Change Username</ion-item>
-      <ion-item (click)="changePassword()">Change Password</ion-item>
-      <ion-item (click)="support()">Support</ion-item>
-      <ion-item (click)="logout()">Logout</ion-item>
+    <ion-list *ngIf="isEdition" inset style="margin-top: 10%;">
+      <form [formGroup]="angForm" novalidate>
+        <ion-item>
+          <ion-label position="stacked">Identité</ion-label>
+          <ion-input formControlName="fullName"></ion-input>
+        </ion-item>
+       
+        <ion-item>
+          <ion-label position="stacked">Adresse email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Numéro de téléphone</ion-label>
+          <ion-input formControlName="phone"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Centre de distribution</ion-label>
+          <ion-input formControlName="centre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Assistant social</ion-label>
+          <ion-input formControlName="contact"></ion-input>
+        </ion-item>
+      </form>
     </ion-list>
+
+
+
+    <ion-list *ngIf="!isEdition" inset style="margin-top: 30%;">
+      <ion-item><a style="font-weight: bold;">Identité : </a><a style="float: right;color: black;"> {{user.firstName}} {{user.lastName}}</a></ion-item>
+      <ion-item><a style="font-weight: bold;">Adresse email : </a><a style="float: right;text-decoration: underline;color: black;"> {{user.email}} </a></ion-item>
+      <ion-item><a style="font-weight: bold;">Téléphone : </a><a style="float: right;color: black;"> {{user.phoneNumber}} </a></ion-item>
+      <ion-item><a style="font-weight: bold;">Centre de distribution : </a><a></a><a style="float: right;color: black;"> {{user.distributionCenter.name}} </a></ion-item>
+      <ion-item><a style="font-weight: bold;">Asssitant social : </a><a></a><a style="float: right;color: black;"> {{user.contactSocial.firstName}} {{user.contactSocial.lastName}}</a></ion-item>
+    </ion-list>
+
+    <ion-button *ngIf="!isEdition" color="success" (click)="switchToEdition()">
+      <ion-icon name="create-outline"></ion-icon>
+      Modifier mes informations</ion-button>
+
+    <ion-button *ngIf="isEdition" color="success" (click)="save()">
+      <ion-icon name="save-outline"></ion-icon>
+        Sauvegarder mes informations
+    </ion-button>
+    <br/>
+    <br/>
+    <ion-button style="width: 80%;" color="success" (click)="redirectToAllergies()">
+      <ion-icon name="nutrition-outline"></ion-icon>
+        Renseigner mes allergies
+        <br/> alimentaires
+    </ion-button>
+    
   </div>
 </ion-content>
