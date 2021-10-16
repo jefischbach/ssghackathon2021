@@ -110,6 +110,7 @@ export class AppComponent implements OnInit {
   updateLoggedInStatus(loggedIn: boolean) {
     setTimeout(() => {
       this.loggedIn = loggedIn;
+      this.checkRole();
     }, 300);
   }
 
