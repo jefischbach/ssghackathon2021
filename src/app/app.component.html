@@ -3,7 +3,7 @@
 
     <ion-menu contentId="main-content">
       <ion-content>
-        <ion-list lines="none">
+        <ion-list *ngIf="role === 'user'" lines="none">
           <ion-list-header>
             Conference
           </ion-list-header>
@@ -23,7 +23,7 @@
             Account
           </ion-list-header>
 
-          <ion-menu-toggle autoHide="false">
+          <ion-menu-toggle *ngIf="role === 'user'" autoHide="false">
             <ion-item routerLink="/account" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="person"></ion-icon>
               <ion-label>
@@ -50,6 +50,23 @@
             </ion-item>
           </ion-menu-toggle>
 
+          <ion-menu-toggle *ngIf="role === 'mairie'" autoHide="false">
+            <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="person-add"></ion-icon>
+              <ion-label>
+                Signup
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-item>
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            <ion-label>
+              Dark Mode
+            </ion-label>
+            <ion-toggle [(ngModel)]="dark"></ion-toggle>
+          </ion-item>
+
         </ion-list>
 
         <ion-list *ngIf="!loggedIn" lines="none">
@@ -75,7 +92,7 @@
             </ion-item>
           </ion-menu-toggle>
 
-          <ion-menu-toggle autoHide="false">
+          <ion-menu-toggle *ngIf="role === 'mairie'" autoHide="false">
             <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="person-add"></ion-icon>
               <ion-label>

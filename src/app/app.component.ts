@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
   ];
   loggedIn = false;
   dark = false;
+  role: string;
 
   constructor(
     private menu: MenuController,
@@ -70,6 +71,7 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     this.checkLoginStatus();
     this.listenForLoginEvents();
+    this.checkRole();
 
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({
@@ -108,6 +110,7 @@ export class AppComponent implements OnInit {
   updateLoggedInStatus(loggedIn: boolean) {
     setTimeout(() => {
       this.loggedIn = loggedIn;
+      this.checkRole();
     }, 300);
   }
 
@@ -136,5 +139,15 @@ export class AppComponent implements OnInit {
     this.menu.enable(false);
     this.storage.set('ion_did_tutorial', false);
     this.router.navigateByUrl('/tutorial');
+  }
+
+  checkRole() {
+
+      this.storage.get("User").then(user => {
+        if(user) {
+          this.role = user.role;
+        }
+      });
+
   }
 }

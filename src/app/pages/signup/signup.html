@@ -3,44 +3,74 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Signup</ion-title>
+    <ion-title>Nouveau bénéficiaire</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <div class="signup-logo">
-    <img src="assets/img/appicon.svg" alt="Ionic Logo">
+  <div class="signup-logo ion-text-center ion-padding-top">
+    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar"/>
   </div>
 
-  <form #signupForm="ngForm" novalidate>
-    <ion-list lines="none">
-      <ion-item>
-        <ion-label position="stacked" color="primary">Username</ion-label>
-        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
-        </ion-input>
-      </ion-item>
-      <ion-text color="danger">
-        <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
-          Username is required
-        </p>
-      </ion-text>
+  <form [formGroup]="angForm" novalidate>
+    <ion-item>
+      <ion-label position="stacked">Prénom</ion-label>
+      <ion-input formControlName="firstName"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked" color="primary">Password</ion-label>
-        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
-        </ion-input>
-      </ion-item>
-      <ion-text color="danger">
-        <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
-          Password is required
-        </p>
-      </ion-text>
-    </ion-list>
+    <small style="color:red;margin-left: 2%;"
+    *ngIf="angForm.get('firstName').hasError('required') && (angForm.get('firstName').dirty || angForm.get('firstName').touched)">
+      Ce champ est requis.
+    </small>
+   
+    <ion-item>
+      <ion-label position="stacked">Nom de famille</ion-label>
+      <ion-input formControlName="lastName"></ion-input>
+    </ion-item>
 
-    <div class="ion-padding">
-      <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Create</ion-button>
-    </div>
+    <small style="color:red;margin-left: 2%;"
+    *ngIf="angForm.get('lastName').hasError('required') && (angForm.get('lastName').dirty || angForm.get('lastName').touched)">
+      Ce champ est requis.
+    </small>
+
+    <ion-item>
+      <ion-label position="stacked">Adresse email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Numéro de téléphone</ion-label>
+      <ion-input formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Personnes à charges</ion-label>
+      <ion-input formControlName="nbPersons"></ion-input>
+    </ion-item>
+
+    <small style="color:red;margin-left: 2%;"
+    *ngIf="angForm.get('nbPersons').hasError('required') && (angForm.get('nbPersons').dirty || angForm.get('nbPersons').touched)">
+      Ce champ est requis.
+    </small>
+
+    <ion-item>
+      <ion-label position="stacked">Droits journaliers (en €)</ion-label>
+      <ion-input type="number" formControlName="right"></ion-input>
+    </ion-item>
+
+    <small style="color:red;margin-left: 2%;"
+    *ngIf="angForm.get('right').hasError('required') && (angForm.get('right').dirty || angForm.get('right').touched)">
+      Ce champ est requis, à remplir uniquement avec des chiffres.
+    </small>
+
   </form>
+
+  <div class="ion-padding-top ion-text-center">
+    <ion-button [disabled]="!angForm.valid" color="success" (click)="save()">
+      <ion-icon name="save-outline"></ion-icon>
+        Créer l'utilisateur
+    </ion-button>
+  </div>
 
 </ion-content>
