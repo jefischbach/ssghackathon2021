@@ -43,7 +43,7 @@ export class MapPage implements AfterViewInit {
 
       mapData.forEach((markerData: any) => {
         const infoWindow = new googleMaps.InfoWindow({
-          content: `<h5>${markerData.name}</h5>`
+          content: `<h5>${markerData.name}</h5><p>${markerData.description}</p>`
         });
 
         const marker = new googleMaps.Marker({

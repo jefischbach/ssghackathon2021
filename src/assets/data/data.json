@@ -405,9 +405,10 @@
 
   "map": [
     {
-      "name": "La nouvelle maison de Jojo",
-      "lat": 10, 
-      "lng": 10,
+      "name": "Sopra Steria Clermont-Ferrand",
+      "description": "Vous avez un panier pour 1 sans oeuf sans lait à retirer",
+      "lat": 45.76030472718349, 
+      "lng": 3.13468460384868,
       "center": true
     }
   ],
