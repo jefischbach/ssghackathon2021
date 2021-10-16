@@ -1,0 +1,18 @@
+{
+    "users": 
+        [
+            {
+                "id":"123456897",
+                "username": "denis",
+                "password": "test",
+                "email":"test.test@mail.com",
+                "role": "user",
+                "firstName":"John",
+                "lastName":"Doe",
+                "address": "1 rue de la victoire",
+                "nbPersons" : "2",
+                "rightsMoney": "50"
+            }
+        ]
+    
+}
