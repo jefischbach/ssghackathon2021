@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
   }
 
   goToFiles() {
-
+    this.router.navigateByUrl('/app/tabs/filesafe');
   }
 
   goToChat() {

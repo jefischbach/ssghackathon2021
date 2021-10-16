@@ -76,6 +76,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'filesafe',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../filesafe/filesafe.module').then(m => m.FilesafeModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/home',
         pathMatch: 'full'

@@ -46,7 +46,38 @@
             "description": "trois tacos",
             "allergies" : []
         }
-    } 
+    },
 
-    
+    "files": [
+        {
+            "name": "Carte vitale",
+            "creationDate": "05/06/2020",
+            "type": "png",
+            "size": 23948
+        },
+        {
+            "name": "Carte vitale",
+            "creationDate": "05/06/2020",
+            "type": "png",
+            "size": 23948
+        },
+        {
+            "name": "Carte vitale",
+            "creationDate": "05/06/2020",
+            "type": "png",
+            "size": 23948
+        },
+        {
+            "name": "Carte vitale",
+            "creationDate": "05/06/2020",
+            "type": "pdf",
+            "size": 23948
+        },
+        {
+            "name": "Carte vitale",
+            "creationDate": "05/06/2020",
+            "type": "pdf",
+            "size": 23948
+        }
+    ]
 }

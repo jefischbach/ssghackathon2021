@@ -1,0 +1,31 @@
+<section>
+  <div class="d-flex-c">
+    <ion-icon name="lock-closed" size="large" class="my-a"></ion-icon>
+    <h4>Bienvenue sur votre<br/>coffre-fort numérique</h4>
+  </div>
+  <ion-button id="addFileButton" expand="block" (click)="addFile()" color="secondary">
+    <ion-icon id="saveIcon" name="add"></ion-icon>
+    Ajouter un document
+  </ion-button>
+  <ion-list>
+    <ion-list-header>
+      Mes fichiers
+    </ion-list-header>
+
+    <ion-item *ngFor="let file of files">
+      <ion-icon *ngIf="getFileType(file.type) === 'text'" name="document" size="medium" style="width: 15%;"></ion-icon>
+      <ion-icon *ngIf="getFileType(file.type) === 'image'" name="image" size="medium" style="width: 15%;"></ion-icon>
+      <ion-icon *ngIf="getFileType(file.type) === 'video'" name="videocam" size="medium" style="width: 15%;"></ion-icon>
+      <ion-label>
+        <h2>{{file.name}} </h2>
+        <h3>Ajouté le {{file.creationDate}}</h3>
+      </ion-label>
+      <ion-icon name="download" size="medium" style="width: 10%; margin-right: 2em;" color="primary"></ion-icon>
+      <ion-icon name="trash" size="medium" style="width: 10%;" color="danger" (click)="remove(file)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</section>
+<section>
+  
+</section>
+
