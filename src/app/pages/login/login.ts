@@ -5,6 +5,7 @@ import { UserData } from '../../providers/user-data';
 import { UserOptions } from '../../interfaces/user-options';
 import { Storage } from '@ionic/storage';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'page-login',
@@ -20,6 +21,7 @@ export class LoginPage implements AfterViewInit {
     public router: Router,
     private storage: Storage,
     private faio: FingerprintAIO,
+    public toastController: ToastController
   ) { }
 
   ngAfterViewInit(): void {
@@ -29,7 +31,7 @@ export class LoginPage implements AfterViewInit {
         this.faio.isAvailable().then(available => {
           if (available) {
             this.faio.show({
-              clientId: 'Omnibouffe',
+              clientId: 'Collect\'eat',
               clientSecret: 'password', //Only necessary for Android
               disableBackup:true,  //Only for Android(optional)
             }).then(r => {
@@ -42,12 +44,17 @@ export class LoginPage implements AfterViewInit {
     });
   }
 
-  onLogin(form: NgForm) {
+  async onLogin(form: NgForm) {
     this.submitted = true;
 
     if (form.valid) {
       this.userData.login(this.login.username);
       this.router.navigateByUrl('/app/tabs/schedule');
+      const toast = await this.toastController.create({
+        message: 'Bienvenue ' + this.login.username + ' !',
+        duration: 2000
+      });
+      toast.present();
     }
   }
 

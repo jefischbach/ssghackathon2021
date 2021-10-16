@@ -1,0 +1,27 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Retrait de panier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Retrait de panier</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="center mt">
+    <ion-label>Ce QR code est valide jusqu'au </ion-label>
+    <ion-label color="warning">16/10/2021</ion-label>
+  </div>
+  <qrcode [qrdata]="basketRight" [size]="256" [level]="'M'" *ngIf="basketRight"></qrcode>
+  <div class="center content-center">
+    <ion-label>Veuillez présenter ce QR code au centre de retrait de votre panier.
+    </ion-label>
+  </div>
+  
+
+</ion-content>

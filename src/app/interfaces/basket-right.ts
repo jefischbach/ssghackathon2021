@@ -4,5 +4,4 @@ export interface BasketRight{
     id: string;
     user: UserOptions;
     basket: BasketRight;
-    nbOfBasket: number;
 }

@@ -67,6 +67,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'basket-qr',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../basket-qr/basket-qr.module').then(m => m.BasketQRModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'

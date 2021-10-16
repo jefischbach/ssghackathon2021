@@ -43,6 +43,11 @@ export class AppComponent implements OnInit {
       title: 'Allergies',
       url: '/app/tabs/allergies',
       icon: 'nutrition'
+    },
+    {
+      title: 'Panier',
+      url: '/app/tabs/basket-qr',
+      icon: 'qr-code'
     }
   ];
   loggedIn = false;
