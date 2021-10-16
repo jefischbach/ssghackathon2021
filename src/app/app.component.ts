@@ -20,9 +20,9 @@ import { UserData } from './providers/user-data';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Schedule',
-      url: '/app/tabs/schedule',
-      icon: 'calendar'
+      title: 'Home',
+      url: '/app/tabs/home',
+      icon: 'home'
     },
     {
       title: 'Speakers',
@@ -128,7 +128,7 @@ export class AppComponent implements OnInit {
   logout() {
     this.userData.logout().then(() => {
       this.storage.remove("User");
-      return this.router.navigateByUrl('/app/tabs/schedule');
+      return this.router.navigateByUrl('/login');
     });
   }
 

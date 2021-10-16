@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
-import { SchedulePage } from '../schedule/schedule';
+import { HomePage } from '../home/home';
 
 
 const routes: Routes = [
@@ -10,11 +10,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: 'home',
         children: [
           {
             path: '',
-            component: SchedulePage,
+            component: HomePage,
           },
           {
             path: 'session/:sessionId',
@@ -77,7 +77,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/app/tabs/schedule',
+        redirectTo: '/app/tabs/home',
         pathMatch: 'full'
       }
     ]

@@ -1,0 +1,51 @@
+<ion-content class="speaker-detail">
+
+  <div class="speaker-background">
+    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
+  </div>
+
+  <h4 *ngIf="user" class="center">{{user.firstName}} {{user.lastName}}</h4>
+
+  <section>
+    <ion-grid>
+      <ion-row class="homerow">
+        <ion-col>
+          <div class="tabb">
+            <ion-tab-button size="medium" color="light" (click)="goToQr()">
+              <ion-label>Pass collecte</ion-label>
+              <ion-icon name="qr-code" size="large"></ion-icon>
+            </ion-tab-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="tabb">
+            <ion-tab-button size="medium" color="light" (click)="goToMap()">
+              <ion-label>Trouver le centre <br/> de distribution</ion-label>
+              <ion-icon name="navigate" size="large"></ion-icon>
+            </ion-tab-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="homerow mt-2">
+        <ion-col>
+          <div class="tabb">
+            <ion-tab-button size="medium" color="light" (click)="goToFiles()">
+              <ion-label>Coffre-fort <br/>numérique</ion-label>
+              <ion-icon name="lock-closed" size="large"></ion-icon>
+            </ion-tab-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="tabb">
+            <ion-tab-button size="medium" color="light" (click)="goToChat()">
+              <ion-label>Contacter votre <br/> assistante sociale</ion-label>
+              <ion-icon name="chatbubbles" size="large"></ion-icon>
+            </ion-tab-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+
+</ion-content>

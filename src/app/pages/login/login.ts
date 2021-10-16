@@ -50,7 +50,7 @@ export class LoginPage implements AfterViewInit {
                  if(users && users.length > 0) {
                    this.userData.login(this.login.username);
                    this.storage.set("User",users[0]);
-                   this.router.navigateByUrl('/app/tabs/schedule');
+                   this.router.navigateByUrl('/app/tabs/home');
                  }
                }) 
             });
@@ -76,7 +76,7 @@ export class LoginPage implements AfterViewInit {
         if(users && users.length > 0) {
           this.userData.login(this.login.username);
           this.storage.set("User",users[0]);
-          this.router.navigateByUrl('/app/tabs/schedule');
+          this.router.navigateByUrl('/app/tabs/home');
 
           toast.present();
         }
