@@ -11,7 +11,18 @@
                 "lastName":"Doe",
                 "address": "1 rue de la victoire",
                 "nbPersons" : "2",
-                "rightsMoney": "50"
+                "rightsMoney": "50",
+                "distributionCenter":{
+                    "id": "1",
+                    "name": "marché des paniers",
+                    "lon":45.77347132084348, 
+                    "lat":3.0833786788565143
+                },
+                "contactSocial" : {
+                    "firstName":"Josiane",
+                    "lastName":"Dupont"
+                },
+                "phoneNumber" : "0654789845"
             }
         ]
     
