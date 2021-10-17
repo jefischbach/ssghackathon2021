@@ -1,0 +1,38 @@
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>Discussion avec {{contact.firstName}}  {{contact.lastName}}</ion-list-header>
+    <ng-container *ngFor="let msg of messages">
+      <ion-item *ngIf="!msg.incoming">
+        <ion-thumbnail slot="end">
+          <img src="assets/img/speakers/turtle.jpg">
+        </ion-thumbnail>
+        <div style="margin-bottom: 2%;">
+          <p style="margin: 0; font-size: 9px;">{{msg.time}}</p>
+          <p style="text-align: right; margin: 0;">{{msg.content}}</p>
+        </div>
+      </ion-item>
+      <ion-item *ngIf="msg.incoming">
+        <ion-thumbnail slot="start">
+          <img src="assets/img/obama.jpg">
+        </ion-thumbnail>
+        <div style="margin-bottom: 6%;">
+          <p style="margin: 0; font-size: 9px;">{{msg.time}}</p>
+          <p style="text-align: right; margin: 0;">{{msg.content}}</p>
+        </div>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>
+
+<section *ngIf="answerfg">
+  <form [formGroup]="answerfg" novalidate>
+    <ion-item>
+      <ion-label position="stacked">Réponse</ion-label>
+      <ion-input formControlName="answer"></ion-input>
+    </ion-item>
+    <ion-button color="primary" (click)="send()" expand="block">
+      <ion-icon name="send"></ion-icon>
+        Envoyer
+    </ion-button>
+  </form>
+</section>

@@ -50,6 +50,6 @@ export class HomePage implements OnInit {
   }
 
   goToChat() {
-
+    this.router.navigateByUrl('/app/tabs/chat')
   }
 }

@@ -19,6 +19,8 @@ import { HomeAssosPageModule } from '../home-assos/home-assos.module';
 import { SignUpModule } from '../signup/signup.module';
 import { BasketCreationPageModule } from '../basket-creation/basket-creation.module';
 import { BasketScanModule } from '../basket-scan/basket-scan.module';
+import { ChatComponent } from '../chat/chat.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -39,10 +41,12 @@ import { BasketScanModule } from '../basket-scan/basket-scan.module';
     HomeAssosPageModule,
     SignUpModule,
     BasketCreationPageModule,
-    BasketScanModule
+    BasketScanModule,
+    ReactiveFormsModule
   ],
   declarations: [
     TabsPage,
+    ChatComponent
   ]
 })
 export class TabsModule { }

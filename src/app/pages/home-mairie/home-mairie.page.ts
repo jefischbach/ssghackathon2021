@@ -38,7 +38,7 @@ export class HomeMairiePage implements OnInit {
 
 
   goToChat() {
-    
+    this.router.navigateByUrl('/app/tabs/chat')
   }
 
 }
