@@ -5,7 +5,7 @@ import { FileChooser } from '@ionic-native/file-chooser/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -24,7 +24,8 @@ export class FilesafeComponent implements OnInit {
     private faio: FingerprintAIO,
     public toastController: ToastController,
     public router: Router,
-    private storage: Storage
+    private storage: Storage,
+    private alertController: AlertController
   ) { }
 
   ngOnInit() {
@@ -78,8 +79,27 @@ export class FilesafeComponent implements OnInit {
     toast.present();
   }
 
-  remove(file: any) {
-    this.files.splice(this.files.indexOf(file), 1);
+  async remove(file: any) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Suppression',
+      subHeader: file.name,
+      message: 'Voulez-vous supprimer le fichier '+file.name+' de votre coffre-fort numérique?',
+      buttons: [
+        {
+          text: 'OK',
+          cssClass: 'mra',
+          handler: () => {
+            this.files.splice(this.files.indexOf(file), 1);
+          }
+        }, {
+          text: 'ANNULER',
+        }
+      ]
+
+    });
+
+    await alert.present();
   }
 
   addFile() {
