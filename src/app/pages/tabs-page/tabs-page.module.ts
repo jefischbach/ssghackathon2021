@@ -12,6 +12,14 @@ import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
 import { SpeakerListModule } from '../speaker-list/speaker-list.module';
 import { HomeModule } from '../home/home.module';
+import { AccountModule } from '../account/account.module';
+import { HomeMairiePage } from '../home-mairie/home-mairie.page';
+import { HomeMairiePageModule } from '../home-mairie/home-mairie.module';
+import { HomeAssosPageModule } from '../home-assos/home-assos.module';
+import { SignUpModule } from '../signup/signup.module';
+import { BasketCreationPageModule } from '../basket-creation/basket-creation.module';
+
+
 
 @NgModule({
   imports: [
@@ -24,7 +32,12 @@ import { HomeModule } from '../home/home.module';
     SpeakerDetailModule,
     SpeakerListModule,
     TabsPageRoutingModule,
-    HomeModule
+    HomeModule,
+    AccountModule,
+    HomeMairiePageModule,
+    HomeAssosPageModule,
+    SignUpModule,
+    BasketCreationPageModule
   ],
   declarations: [
     TabsPage,

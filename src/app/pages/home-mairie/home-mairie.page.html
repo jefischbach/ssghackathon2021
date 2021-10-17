@@ -1,0 +1,33 @@
+<ion-content class="speaker-detail">
+
+  <div class="speaker-background">
+    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
+  </div>
+
+  <h4 *ngIf="user" class="center">{{user.firstName}} {{user.lastName}}</h4>
+
+  <section>
+    <ion-grid>
+      <ion-row class="homerow">
+        <ion-col>
+          <div class="tabb">
+            <ion-tab-button  size="medium" color="light" (click)="goToSignup()">
+              <ion-label>Ajout utilisateur</ion-label>
+              <ion-icon name="person-add" size="large"></ion-icon>            
+            </ion-tab-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="tabb">
+            <ion-tab-button  size="medium" color="light" (click)="goToChat()">
+              <ion-label>Répondre aux questions<br/> des utilisateurs</ion-label>
+              <ion-icon name="chatbubbles" size="large"></ion-icon>
+            </ion-tab-button>
+          </div>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+  </section>
+
+
+</ion-content>

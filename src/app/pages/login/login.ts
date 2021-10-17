@@ -8,10 +8,8 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 import { ToastController } from '@ionic/angular';
 
 import { AngularFireDatabase } from '@angular/fire/database';
-import { element } from 'protractor';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { analytics } from 'firebase';
+
 
 @Component({
   selector: 'page-login',
@@ -78,11 +76,12 @@ export class LoginPage implements AfterViewInit {
           this.storage.set("User",users[0]);
           let role = users[0].role;
           if('user' === role) {
-            this.router.navigateByUrl('/app/tabs/schedule');
+            this.router.navigateByUrl('/app/tabs/home');
+          } else if ('mairie' === role) {           
+            this.router.navigateByUrl('/app/tabs/home-mairie');
+          } else if ("assos" === role) {
+            this.router.navigateByUrl('/app/tabs/home-assos');
           }
-          
-
-
           toast.present();
         }
       }) 

@@ -1,25 +1,31 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
+    <ion-tab-button *ngIf="role === 'user'" tab="home">
       <ion-icon name="home"></ion-icon>
       <ion-label>Menu</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="speakers">
-      <ion-icon name="people"></ion-icon>
-      <ion-label>Speakers</ion-label>
+    <ion-tab-button *ngIf="role === 'mairie'" tab="home-mairie">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Menu</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="map">
-      <ion-icon name="location"></ion-icon>
-      <ion-label>Map</ion-label>
+    <ion-tab-button *ngIf="role === 'assos'" tab="home-assos">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Menu</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="about">
-      <ion-icon name="information-circle"></ion-icon>
-      <ion-label>About</ion-label>
+    <ion-tab-button *ngIf="role === 'user'" tab="account">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Compte</ion-label>
     </ion-tab-button>
+
+    <ion-tab-button (click)="logout()">
+      <ion-icon name="exit"></ion-icon>
+      <ion-label>Deconnexion</ion-label>
+    </ion-tab-button>
+
   </ion-tab-bar>
 
 </ion-tabs>

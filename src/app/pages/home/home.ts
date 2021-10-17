@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Storage } from '@ionic/storage';
+import { UserOptions } from '../../interfaces/user-options';
 import { UserData } from '../../providers/user-data';
 
 
@@ -13,7 +14,7 @@ import { UserData } from '../../providers/user-data';
 })
 export class HomePage implements OnInit {
 
-  user: any;
+  user: UserOptions;
 
   constructor(private storage: Storage,
     public router: Router,
