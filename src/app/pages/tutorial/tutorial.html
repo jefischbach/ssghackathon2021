@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button color='primary' (click)="startApp()" [hidden]="!showSkip">Skip</ion-button>
+      <ion-button class="skip" color='white' (click)="startApp()" [hidden]="!showSkip">Passer</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -9,39 +9,60 @@
 <ion-content fullscreen="true">
   <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
     <ion-slide>
-      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+      <img src="assets/img/logo.png"  />
       <h2 class="slide-title">
-        Welcome to
-        <b>ICA</b>
+        Bienvenue sur
+        <b>Collect'EAT !</b>
       </h2>
       <p>
-        The
-        <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of proper code
-        use.
+        L'application
+        <b>Collect'EAT</b> permet de vous accompagner dans votre quotidien afin de faciliter l'accès à vos droits, nous allons ici vous présenter les différentes fonctionalités.
+        <br/><br/>
+        <b>Faites glisser l'écran pour continuer</b>
       </p>
     </ion-slide>
 
     <ion-slide>
-      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
-      <h2 class="slide-title">What is Ionic?</h2>
+      <img src="assets/img/menu.PNG" class="slide-image" />
+      <h2 class="slide-title">Menu principal</h2>
       <p>
-        <b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies
-        like HTML, CSS, and JavaScript.</p>
+        Le menu principal de l'application vous d'accéder rapidement à toutes les fonctionalités proposées</p>
     </ion-slide>
 
     <ion-slide>
-      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
-      <h2 class="slide-title">What is Ionic Appflow?</h2>
+      <img src="assets/img/qr-code.PNG" class="slide-image" />
+      <h2 class="slide-title">Pass collecte <ion-icon name="qr-code" class="big"></ion-icon></h2>
       <p>
-        <b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new
-        level of app development agility to mobile dev teams.</p>
+        Le bouton <b>Pass collecte</b> permet de générer un QR-code à présenter lors de la distribution des paniers repas afin de pouvoir retirer votre panier.</p>
     </ion-slide>
 
     <ion-slide>
-      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
-      <h2 class="slide-title">Ready to Play?</h2>
+      <img src="assets/img/map.PNG" class="slide-image" />
+      <h2 class="slide-title">Trouver le centre de distribution <ion-icon class="big" name="navigate"></ion-icon> </h2>
+      <p>
+        Le bouton <b>Trouver le centre de distribution</b> affiche une carte vous indiquant le centre de distribution où retirer votre panier repas.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/safe.png" class="slide-image" />
+      <h2 class="slide-title">Coffre-fort numérique <ion-icon class="big" name="lock-closed"></ion-icon> </h2>
+      <p>
+        Le bouton <b>Coffre-fort numérique</b> permet d'accéder à votre espace de sotckage sécurisée où vous pouvez ajouter vos documents</p>
+    </ion-slide>
+
+    
+    <ion-slide>
+      <img src="assets/img/chat.png" class="slide-image" />
+      <h2 class="slide-title">Contacter votre assistante sociale<ion-icon class="big" name="chatbubbles"></ion-icon> </h2>
+      <p>
+        Besoin d'aide ? Le bouton <b>Contacter votre assistante sociale</b> permet de contacter votre assistante sociale pour vous assiter sur le fonctionnement de l'application ou pour tout autre question.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/home-bg.png" />
+      <h2 class="slide-title">Merci d'utiliser <b>Collect'EAT !</b></h2>
       <ion-button fill="clear" (click)="startApp()">
-        Continue
+        Continuer
         <ion-icon slot="end" name="arrow-forward"></ion-icon>
       </ion-button>
     </ion-slide>

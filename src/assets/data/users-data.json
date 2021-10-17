@@ -3,52 +3,78 @@
         [
             {
                 "id":"123456897",
-                "username": "denis",
+                "username": "user1",
                 "password": "test",
-                "email":"test.test@mail.com",
+                "email":"Laurence.appleton@laposte.fr",
                 "role": "user",
-                "firstName":"John",
-                "lastName":"Doe",
-                "address": "1 rue de la victoire",
-                "nbPersons" : "2",
-                "rightsMoney": "50",
+                "firstName":"Laurent",
+                "lastName":"Appleton",
+                "address": "46, Rue Thévenot Thibaud 63000 CLERMONT-FERRAND",
+                "nbPersons" : "1",
+                "rightsMoney": "30",
                 "distributionCenter":{
                     "id": "1",
-                    "name": "marché des paniers",
+                    "name": "Restos du cœur 2 Rue Emilienne Goumy, 63000 Clermont-Ferrand",
                     "lon":45.77347132084348, 
                     "lat":3.0833786788565143
                 },
                 "contactSocial" : {
-                    "firstName":"Josiane",
-                    "lastName":"Dupont"
+                    "firstName":"Aubert",
+                    "lastName":"LaRoche"
                 },
-                "phoneNumber" : "0654789845"
+                "phoneNumber" : "06.07.79.41.00"
             },
             {
                 "id":"987654321",
                 "username": "user2",
                 "password": "test",
-                "email":"user2@mail.com",
+                "email":"O.Gauthier@bouygues.fr",
                 "role": "user",
-                "firstName":"Jean",
-                "lastName":"Martin",
-                "address": "1 rue de la victoire",
-                "nbPersons" : "2",
-                "rightsMoney": "50",
+                "firstName":"Orson",
+                "lastName":"Gauthier",
+                "address": "83, rue de la Mare aux Carats 63000 CLERMONT-FERRAND",
+                "nbPersons" : "3",
+                "rightsMoney": "110",
                 "distributionCenter":{
                     "id": "1",
-                    "name": "Centre Social George Pompidou",
+                    "name": "Délégation Du Puy-De-Dome - Croix Rouge française 23 Bd Jean Moulin, 63100",
                     "lon":45.77347132084348, 
                     "lat":3.0833786788565143
                 },
                 "contactSocial" : {
-                    "firstName":"Michel",
-                    "lastName":"Dumas"
+                    "firstName":"Benoit",
+                    "lastName":"Chevrette"
                 },
                 "allergies" : [
                     {"name":"Soja"}
                 ],
-                "phoneNumber" : "021236546"
+                "phoneNumber" : "07.12.91.71.42"
+            },
+            {
+                "id":"95873666",
+                "username": "user3",
+                "password": "test",
+                "email":"PaulinePaquet@dayrep.com",
+                "role": "user",
+                "firstName":"Pauline",
+                "lastName":"Paquet",
+                "address": "59, Chemin Du Lavarin Sud 94230 CACHAN",
+                "nbPersons" : "5",
+                "rightsMoney": "250",
+                "distributionCenter":{
+                    "id": "1",
+                    "name": "Délégation Du Puy-De-Dome - Croix Rouge française 23 Bd Jean Moulin, 63100",
+                    "lon":45.77347132084348, 
+                    "lat":3.0833786788565143
+                },
+                "contactSocial" : {
+                    "firstName":"Chizoba",
+                    "lastName":"Ndubuisi"
+                },
+                "allergies" : [
+                    {"name":"Lait"}
+                ],
+                "phoneNumber" : "07.12.91.71.42"
             },
             {
                 "id":"123456897",

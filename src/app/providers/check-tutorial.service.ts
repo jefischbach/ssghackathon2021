@@ -11,7 +11,7 @@ export class CheckTutorial implements CanLoad {
     return this.storage.get('ion_did_tutorial').then(res => {
       if (res) {
         this.router.navigate(['/app', 'tabs', 'schedule']);
-        return false;
+        return true;
       } else {
         return true;
       }

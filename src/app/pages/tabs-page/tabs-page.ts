@@ -70,4 +70,10 @@ export class TabsPage implements OnInit {
       });
   }
 
+  
+  goToTuto() {
+    this.storage.set('ion_did_tutorial', false);
+    this.router.navigateByUrl('/tutorial');
+  }
+
 }

@@ -1,6 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Discussion avec {{contact.firstName}}  {{contact.lastName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content fullscreen>
   <ion-list>
-    <ion-list-header>Discussion avec {{contact.firstName}}  {{contact.lastName}}</ion-list-header>
     <ng-container *ngFor="let msg of messages">
       <ion-item *ngIf="!msg.incoming">
         <ion-thumbnail slot="end">

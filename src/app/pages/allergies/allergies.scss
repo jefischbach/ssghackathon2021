@@ -34,14 +34,19 @@ p {
 }
 
 #saveIcon {
-  margin-right: 1em;
+  margin-right: 3%;
 }
 
 #saveButton {
   margin: 2em auto;
-  width: 50%;
+  width: 80%;
 }
 
 #header {
   margin-top: 1em;
+}
+
+ion-chip{
+  font-size: 25px;
+  min-height: 3em;
 }
