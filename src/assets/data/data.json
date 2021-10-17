@@ -410,6 +410,13 @@
       "lat": 45.76030472718349, 
       "lng": 3.13468460384868,
       "center": true
+    },
+    {
+      "name": "Croix Rouge",
+      "description": "Délégation Du Puy-De-Dome - Croix Rouge française",
+      "lat": 45.77396853747401, 
+      "lng": 3.1205403268176584,
+      "center": false
     }
   ],
 
