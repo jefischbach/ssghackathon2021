@@ -162,4 +162,8 @@ export class AccountPage implements AfterViewInit, OnInit {
     this.router.navigateByUrl('/app/tabs/allergies');
   }
 
+  clearCache() {
+    this.storage.remove('ion_did_tutorial');
+  }
+
 }

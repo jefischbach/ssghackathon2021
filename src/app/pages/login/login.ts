@@ -49,7 +49,21 @@ export class LoginPage implements AfterViewInit {
                    this.userData.login(this.login.username);
                    this.storage.set("User",users[0]);
                    this.storage.set("fingeprintauth", true);
-                   this.router.navigateByUrl('/app/tabs/home');
+                   let role = users[0].role;
+                   if('user' === role) {
+                    this.storage.get('ion_did_tutorial').then(el =>
+                    {
+                      if(el) {
+                        this.router.navigateByUrl('/app/tabs/home');
+                      } else {
+                        this.router.navigateByUrl('/tutorial');    
+                      }    
+                    });
+                  } else if ('mairie' === role) {           
+                    this.router.navigateByUrl('/app/tabs/home-mairie');
+                  } else if ("assos" === role) {
+                    this.router.navigateByUrl('/app/tabs/home-assos');
+                  }
                  }
                }) 
             });
@@ -77,7 +91,16 @@ export class LoginPage implements AfterViewInit {
           this.storage.set("User",users[0]);
           let role = users[0].role;
           if('user' === role) {
-            this.router.navigateByUrl('/app/tabs/home');
+            this.storage.get('ion_did_tutorial').then(el =>
+            {
+              if(el) {
+                this.router.navigateByUrl('/app/tabs/home');
+              } else {
+                this.router.navigateByUrl('/tutorial');
+
+              }
+
+            });
           } else if ('mairie' === role) {           
             this.router.navigateByUrl('/app/tabs/home-mairie');
           } else if ("assos" === role) {
