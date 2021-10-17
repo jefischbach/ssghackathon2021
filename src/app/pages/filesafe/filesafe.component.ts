@@ -6,6 +6,7 @@ import { FilePath } from '@ionic-native/file-path/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-filesafe',
@@ -22,29 +23,39 @@ export class FilesafeComponent implements OnInit {
     private file: File,
     private faio: FingerprintAIO,
     public toastController: ToastController,
-    public router: Router
+    public router: Router,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
-    this.faio.isAvailable().then(available => {
-      if (available) {
-        this.faio.show({
-          clientId: 'Collect\'eat',
-          clientSecret: 'password', //Only necessary for Android
-          disableBackup: true,  //Only for Android(optional)
-        }).then(r => {
-          if (!r) {
-            this.toastFingerprint();
-            this.router.navigateByUrl('/');
-          } else {
-            this.http.get("assets/data/users-data.json").subscribe((data: any) => {
-              this.files = data.files;
+    this.storage.get('fingerprintauth').then(r => {
+      if (r) {
+        this.faio.isAvailable().then(available => {
+          if (available) {
+            this.faio.show({
+              clientId: 'Collect\'eat',
+              clientSecret: 'password', //Only necessary for Android
+              disableBackup: true,  //Only for Android(optional)
+            }).then(r => {
+              if (!r) {
+                this.toastFingerprint();
+                this.router.navigateByUrl('/');
+              } else {
+                this.http.get("assets/data/users-data.json").subscribe((data: any) => {
+                  this.files = data.files;
+                });
+              }
+            }).catch(e => {
+              this.toastFingerprint();
+              this.router.navigateByUrl('/');
             });
           }
-        }).catch(e => {
-          this.toastFingerprint();
-          this.router.navigateByUrl('/');
-        } );
+        });
+      } else {
+        this.toastFingerprintWarning();
+        this.http.get("assets/data/users-data.json").subscribe((data: any) => {
+          this.files = data.files;
+        });
       }
     });
   }
@@ -53,7 +64,16 @@ export class FilesafeComponent implements OnInit {
     const toast = await this.toastController.create({
       message: 'La consultation de votre coffre-fort numérique nécessite une authentification biométrique',
       color: "danger",
-      duration: 2000
+      duration: 4000
+    });
+    toast.present();
+  }
+
+  async toastFingerprintWarning() {
+    const toast = await this.toastController.create({
+      message: 'Vous avez accès à votre coffre-fort numérique. Veillez à vous authentifier avec votre empreinte digitale afin d\'en sécuriser l\'accès.',
+      color: "warning",
+      duration: 8000
     });
     toast.present();
   }

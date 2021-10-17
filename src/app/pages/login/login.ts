@@ -48,6 +48,7 @@ export class LoginPage implements AfterViewInit {
                  if(users && users.length > 0) {
                    this.userData.login(this.login.username);
                    this.storage.set("User",users[0]);
+                   this.storage.set("fingeprintauth", true);
                    this.router.navigateByUrl('/app/tabs/home');
                  }
                }) 
