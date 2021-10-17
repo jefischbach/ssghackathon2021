@@ -1,7 +1,7 @@
     > npm i
     > ionic cap sync
     > ionic cap open android
-launch the app through android studio
+launch the app through android studio or use the versioned apk
 
 user accounts:
 
