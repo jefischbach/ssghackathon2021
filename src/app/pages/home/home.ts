@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Storage } from '@ionic/storage';
 import { UserData } from '../../providers/user-data';
 
@@ -15,7 +17,9 @@ export class HomePage implements OnInit {
 
   constructor(private storage: Storage,
     public router: Router,
-    public userData: UserData) {}
+    public userData: UserData,
+    private http: HttpClient,
+    private barcodeScanner: BarcodeScanner) {}
 
   ngOnInit() {
     this.userData.isLoggedIn().then(isLoggedIn => {
@@ -30,7 +34,10 @@ export class HomePage implements OnInit {
   }
   
   goToQr() {
-    this.router.navigateByUrl('/app/tabs/basket-qr');
+    this.http.get("assets/data/users-data.json").subscribe((data: any) => {
+      this.barcodeScanner.encode(this.barcodeScanner.Encode.TEXT_TYPE, data.basketRight);
+    });
+    // this.router.navigateByUrl('/app/tabs/basket-qr');
   }
 
   goToMap() {

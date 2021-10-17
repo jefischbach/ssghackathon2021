@@ -18,7 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AccountPage } from './pages/account/account';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 const firebaseConfig = {
 
@@ -58,7 +58,7 @@ const firebaseConfig = {
     FormsModule
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, FingerprintAIO],
+  providers: [InAppBrowser, SplashScreen, StatusBar, FingerprintAIO, BarcodeScanner],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

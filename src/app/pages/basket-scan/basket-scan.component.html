@@ -1,0 +1,18 @@
+<section>
+  <div *ngIf="basketRight" style="text-align: center;">
+    <ion-icon *ngIf="scanned<2; else errorScan" name="checkmark" color="success" class="bigicon"></ion-icon>
+    <h4>Ce panier a {{(scanned > 1) ? 'déjà' : ''}} été retiré à {{time | date}}</h4>
+    <h5>{{basketRight.basket.name}}</h5>
+    <h6>{{basketRight.basket.description}}</h6>
+  </div>
+</section>
+
+<section>
+  <ion-button (click)="scan()" expand="block" style="height: 4em;">
+    <ion-icon name="scan" size="medium" style="margin-right: 1em;"></ion-icon>
+    Scan</ion-button>
+</section>
+
+<ng-template #errorScan>
+  <ion-icon name="close" color="danger" class="bigicon"></ion-icon>
+</ng-template>

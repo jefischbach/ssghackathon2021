@@ -17,7 +17,7 @@
     <ion-label>Ce QR code est valide jusqu'au </ion-label>
     <ion-label color="warning">16/10/2021</ion-label>
   </div>
-  <qrcode [qrdata]="basketRight" [size]="256" [level]="'M'" *ngIf="basketRight"></qrcode>
+  <qrcode [qrdata]="qrData" [size]="256" [level]="'M'" *ngIf="basketRight"></qrcode>
   <div class="center content-center">
     <ion-label>Veuillez présenter ce QR code au centre de retrait de votre panier.
     </ion-label>
