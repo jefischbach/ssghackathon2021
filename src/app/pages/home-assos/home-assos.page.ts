@@ -31,7 +31,7 @@ export class HomeAssosPage implements OnInit {
   }
   
   goToScan() {
-
+    this.router.navigateByUrl('/app/tabs/basket-scan')
   }
 
   goToBasketCreation() {

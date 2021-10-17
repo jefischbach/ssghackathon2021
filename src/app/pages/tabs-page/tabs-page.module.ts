@@ -18,6 +18,7 @@ import { HomeMairiePageModule } from '../home-mairie/home-mairie.module';
 import { HomeAssosPageModule } from '../home-assos/home-assos.module';
 import { SignUpModule } from '../signup/signup.module';
 import { BasketCreationPageModule } from '../basket-creation/basket-creation.module';
+import { BasketScanModule } from '../basket-scan/basket-scan.module';
 
 
 
@@ -37,7 +38,8 @@ import { BasketCreationPageModule } from '../basket-creation/basket-creation.mod
     HomeMairiePageModule,
     HomeAssosPageModule,
     SignUpModule,
-    BasketCreationPageModule
+    BasketCreationPageModule,
+    BasketScanModule
   ],
   declarations: [
     TabsPage,

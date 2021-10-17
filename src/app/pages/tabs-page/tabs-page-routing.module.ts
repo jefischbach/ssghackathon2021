@@ -6,6 +6,7 @@ import { HomeMairiePage } from '../home-mairie/home-mairie.page';
 import { HomeAssosPage } from '../home-assos/home-assos.page';
 import { SignupPage } from '../signup/signup';
 import { BasketCreationPage } from '../basket-creation/basket-creation.page';
+import { BasketScanComponent } from '../basket-scan/basket-scan.component';
  
 
 const routes: Routes = [
@@ -132,6 +133,15 @@ const routes: Routes = [
           {
             path: '',
             component: BasketCreationPage,
+          }
+        ]
+      },
+      {
+        path: 'basket-scan',
+        children: [
+          {
+            path: '',
+            component: BasketScanComponent,
           }
         ]
       },
