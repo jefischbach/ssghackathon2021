@@ -6,14 +6,14 @@
 
   <h4 *ngIf="user" class="center">{{user.firstName}} {{user.lastName}}</h4>
 
-  <section>
+  <section style="margin-top: 3em;">
     <ion-grid>
       <ion-row class="homerow">
         <ion-col>
           <div class="tabb">
             <ion-tab-button  size="medium" color="light" (click)="goToScan()">
               <ion-label>Scanner pass</ion-label>
-              <ion-icon name="qr-code" size="large"></ion-icon>       
+              <ion-icon name="qr-code" class="big"></ion-icon>       
             </ion-tab-button>
           </div>
         </ion-col>
@@ -21,7 +21,7 @@
           <div class="tabb">
             <ion-tab-button  size="medium" color="light" (click)="goToBasketCreation()">
               <ion-label>Création de panier</ion-label>
-              <ion-icon name="basket-outline" size="large"></ion-icon>
+              <ion-icon name="basket-outline" class="big"></ion-icon>
             </ion-tab-button>
           </div>
         </ion-col>

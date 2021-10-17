@@ -82,9 +82,23 @@
   .tabb {
     border: 1px solid lightgray;
     border-radius: 3px;
-    width: 140px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
   }
+  
+  .big {
+    font-size: 65px;
+  }
+  
+  ion-tab-button>ion-label {
+    font-size: 17px;
+    overflow: visible;
+  }
+  
+  .homerow {
+    text-align: -webkit-center;
+  }
+  
   
   .homerow {
     text-align: -webkit-center;
