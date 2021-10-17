@@ -48,7 +48,7 @@ export class LoginPage implements AfterViewInit {
                  if(users && users.length > 0) {
                    this.userData.login(this.login.username);
                    this.storage.set("User",users[0]);
-                   this.storage.set("fingeprintauth", true);
+                   this.storage.set("fingerprintauth", true);
                    let role = users[0].role;
                    if('user' === role) {
                     this.storage.get('ion_did_tutorial').then(el =>
