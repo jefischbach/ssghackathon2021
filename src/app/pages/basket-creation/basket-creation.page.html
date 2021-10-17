@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Création de panier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="speaker-background">
+</div>
+
+<ion-content>
+
+
+  <form [formGroup]="angForm" novalidate>
+    <ion-item>
+      <ion-label position="stacked">Nom du panier</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <small style="color:red;margin-left: 2%;"
+    *ngIf="angForm.get('name').hasError('required') && (angForm.get('name').dirty || angForm.get('name').touched)">
+      Ce champ est requis.
+    </small>
+   
+    <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+
+    <small style="color:red;margin-left: 2%;"
+    *ngIf="angForm.get('description').hasError('required') && (angForm.get('description').dirty || angForm.get('description').touched)">
+      Ce champ est requis.
+    </small>
+
+    <ion-item>
+      <ion-label>Allergènes du panier</ion-label>
+      <ion-select (ionChange)="resetUsers()" formControlName="allergies" multiple="true" cancelText="Anuller" okText="Valider" placeholder="0 Items">
+        <ion-select-option *ngFor="let allergy of allergies" value="{{allergy.name}}">{{allergy.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bénéficiaires</ion-label>
+      <ion-select formControlName="users" multiple="true" cancelText="Anuller" okText="Valider">
+        <ion-select-option *ngFor="let user of users" value="user.id">{{user.id}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+   
+  </form>
+
+
+
+  <div class="ion-padding-top ion-text-center">
+    <ion-button [disabled]="!angForm.valid" color="success" (click)="save()">
+      <ion-icon name="save-outline"></ion-icon>
+        Créer le panier
+    </ion-button>
+  </div>
+
+</ion-content>

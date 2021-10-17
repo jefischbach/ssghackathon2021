@@ -39,6 +39,14 @@ const routes: Routes = [
   },  {
     path: 'home-mairie',
     loadChildren: () => import('./pages/home-mairie/home-mairie.module').then( m => m.HomeMairiePageModule)
+  },
+  {
+    path: 'home-assos',
+    loadChildren: () => import('./pages/home-assos/home-assos.module').then( m => m.HomeAssosPageModule)
+  },
+  {
+    path: 'basket-creation',
+    loadChildren: () => import('./pages/basket-creation/basket-creation.module').then( m => m.BasketCreationPageModule)
   }
 
 ];

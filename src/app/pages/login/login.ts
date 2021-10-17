@@ -77,9 +77,10 @@ export class LoginPage implements AfterViewInit {
           let role = users[0].role;
           if('user' === role) {
             this.router.navigateByUrl('/app/tabs/home');
-          } else if ('mairie' === role) {
-            
+          } else if ('mairie' === role) {           
             this.router.navigateByUrl('/app/tabs/home-mairie');
+          } else if ("assos" === role) {
+            this.router.navigateByUrl('/app/tabs/home-assos');
           }
           toast.present();
         }

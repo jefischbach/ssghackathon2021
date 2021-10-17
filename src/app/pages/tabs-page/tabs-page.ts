@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserData } from '../../providers/user-data';
 
 import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: 'tabs-page.html'
@@ -15,7 +16,7 @@ export class TabsPage implements OnInit {
   constructor(
     private storage: Storage,
     private userData: UserData,
-
+    public router: Router
   ) {  }
 
   ngOnInit() {
@@ -60,6 +61,13 @@ export class TabsPage implements OnInit {
         }
       });
 
+  }
+
+  logout() {
+      this.userData.logout().then(() => {
+        this.storage.remove("User");
+        return this.router.navigateByUrl('/login');
+      });
   }
 
 }

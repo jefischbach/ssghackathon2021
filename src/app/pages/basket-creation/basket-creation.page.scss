@@ -1,0 +1,17 @@
+.speaker-background {
+    position: relative;
+  
+    display: flex;
+  
+    padding-top: var(--ion-safe-area-top);
+  
+    align-items: center;
+    justify-content: center;
+  
+    flex-direction: column;
+  
+    height: calc(250px + var(--ion-safe-area-top));
+  
+    background: center / cover url(/assets/img/basket.jpg) no-repeat;
+    max-height: 125px;
+  }

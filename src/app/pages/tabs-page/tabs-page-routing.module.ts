@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { HomePage } from '../home/home';
 import { HomeMairiePage } from '../home-mairie/home-mairie.page';
+import { HomeAssosPage } from '../home-assos/home-assos.page';
+import { SignupPage } from '../signup/signup';
+import { BasketCreationPage } from '../basket-creation/basket-creation.page';
  
 
 const routes: Routes = [
@@ -102,6 +105,33 @@ const routes: Routes = [
           {
             path: '',
             component: HomeMairiePage,
+          }
+        ]
+      },
+      {        
+        path: 'home-assos',
+        children: [
+          {
+            path: '',
+            component: HomeAssosPage,
+          }
+        ]
+      },
+      {
+        path: 'signup',
+        children: [
+          {
+            path: '',
+            component: SignupPage,
+          }
+        ]
+      },
+      {
+        path: 'basket-creation',
+        children: [
+          {
+            path: '',
+            component: BasketCreationPage,
           }
         ]
       },

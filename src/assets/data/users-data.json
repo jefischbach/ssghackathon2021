@@ -40,6 +40,21 @@
                     "lat":3.0833786788565143
                 },
                 "phoneNumber" : "0654789845"
+            },
+            {
+                "id":"9999999",
+                "username": "assos",
+                "password": "test",
+                "email":"assos@mail.com",
+                "role": "assos",
+                "address": "1 rue de la victoire",
+                "distributionCenter":{
+                    "id": "1",
+                    "name": "marché des paniers",
+                    "lon":45.77347132084348, 
+                    "lat":3.0833786788565143
+                },
+                "phoneNumber" : "0654789845"
             }
         ],
 

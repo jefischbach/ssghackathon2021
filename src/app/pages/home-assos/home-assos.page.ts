@@ -5,12 +5,11 @@ import { UserData } from '../../providers/user-data';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-home-mairie',
-  templateUrl: './home-mairie.page.html',
-  styleUrls: ['./home-mairie.page.scss'],
+  selector: 'app-home-assos',
+  templateUrl: './home-assos.page.html',
+  styleUrls: ['./home-assos.page.scss'],
 })
-export class HomeMairiePage implements OnInit {
-
+export class HomeAssosPage implements OnInit {
   user: UserOptions;
 
   constructor(private storage: Storage,
@@ -31,14 +30,12 @@ export class HomeMairiePage implements OnInit {
     });
   }
   
-  goToSignup() {
-    this.router.navigateByUrl('/app/tabs/signup');
+  goToScan() {
+
   }
 
-
-
-  goToChat() {
-    
+  goToBasketCreation() {
+    this.router.navigateByUrl('/app/tabs/basket-creation');
   }
 
 }
