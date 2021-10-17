@@ -44,7 +44,9 @@
     <ion-item>
       <ion-label>Bénéficiaires</ion-label>
       <ion-select formControlName="users" multiple="true" cancelText="Anuller" okText="Valider">
-        <ion-select-option *ngFor="let user of users" value="user.id">{{user.id}}</ion-select-option>
+        <ion-select-option *ngFor="let user of users" value="{{user.id}}">
+          {{user.id}}
+        </ion-select-option>
       </ion-select>
     </ion-item>
    

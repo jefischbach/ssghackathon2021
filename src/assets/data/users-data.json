@@ -25,6 +25,32 @@
                 "phoneNumber" : "0654789845"
             },
             {
+                "id":"987654321",
+                "username": "user2",
+                "password": "test",
+                "email":"user2@mail.com",
+                "role": "user",
+                "firstName":"Jean",
+                "lastName":"Martin",
+                "address": "1 rue de la victoire",
+                "nbPersons" : "2",
+                "rightsMoney": "50",
+                "distributionCenter":{
+                    "id": "1",
+                    "name": "Centre Social George Pompidou",
+                    "lon":45.77347132084348, 
+                    "lat":3.0833786788565143
+                },
+                "contactSocial" : {
+                    "firstName":"Michel",
+                    "lastName":"Dumas"
+                },
+                "allergies" : [
+                    {"name":"Soja"}
+                ],
+                "phoneNumber" : "021236546"
+            },
+            {
                 "id":"123456897",
                 "username": "mairie",
                 "password": "test",

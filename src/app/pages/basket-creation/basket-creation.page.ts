@@ -63,7 +63,7 @@ export class BasketCreationPage implements OnInit {
       name : ['',Validators.required],
       description : ['',Validators.required],
       allergies : [''],
-      users : ['']
+      users : ['',Validators.required]
    });
 
   } 
@@ -71,7 +71,7 @@ export class BasketCreationPage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'Utilisateur créé',
+      message: 'Panier sauvegardé',
       color: "success",
       duration: 2000
     });
@@ -84,14 +84,24 @@ export class BasketCreationPage implements OnInit {
     });
     this.selectedAllergies = this.angForm.controls.allergies.value;
     this.http.get("assets/data/users-data.json").subscribe((elem: any) => {
-      this.users =  elem.users.filter(el => {el.role === 'user' && el.allergies.filter(al => !(al in this.selectedAllergies))});
+      console.log(this.selectedAllergies);
+      this.users = elem.users.filter(el => el.role === 'user').filter(el => (!el.allergies || el.allergies.length === 0) || !(el.allergies.some(al => this.selectedAllergies.some(sal => sal === al.name))));
       console.log(this.users);
     });
 
   }
 
   save() {
-    
+    this.angForm.setValue({
+      name:'',
+      description: '',
+      allergies : '',
+      users : ''
+    });
+    this.angForm.markAsPristine();
+    this.angForm.markAsUntouched();
+    this.presentToast();
+    this.router.navigateByUrl('/app/tabs/home-assos');
   
   }
 }
