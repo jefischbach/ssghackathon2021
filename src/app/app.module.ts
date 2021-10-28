@@ -22,7 +22,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDqO7ZJV0prXdAb6zYOi-BbX6-PR_ltmh8",
+  apiKey: "",
 
   authDomain: "hackatonssg2021.firebaseapp.com",
 
